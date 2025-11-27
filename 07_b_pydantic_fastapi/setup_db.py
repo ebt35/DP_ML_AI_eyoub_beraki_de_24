@@ -5,7 +5,7 @@ query_duckdb("DROP TABLE IF EXISTS movies;")
 query_duckdb("""
             CREATE TABLE IF NOT EXISTS movies (
                 title STRING,
-                year TINYINT,
+                year INT,
                 genre STRING,
                 rating TINYINT
             );
