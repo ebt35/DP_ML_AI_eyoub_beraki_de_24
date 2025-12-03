@@ -25,10 +25,10 @@ if __name__ == "__main__":
     bot = JokeBot()
 
     # call method chat (bot is sent in as self)
-    # result = bot.chat("tell me a math joke")
+    result = bot.chat("tell me a math joke")
     result = bot.chat("hallo thare")
 
-    # result = bot.chat("what did I ask you first?")
+    result = bot.chat("what did I ask you first?")
     print(result)
         
         
