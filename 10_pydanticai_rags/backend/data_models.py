@@ -5,13 +5,14 @@ from pydantic import Field
 
 load_dotenv()
 
-embeddig_model = get_registry().get("gemini-text").create(name="gemini-embedding-001")
+embedding_model = get_registry().get("gemini-text").create(name="gemini-embedding-001")
 
-EMBEDDING_DIM =3072
+EMBEDDING_DIM = 3072
 
-class Articel(LanceModel):
-    doc_id: str
-    filepath: str
+class Article(LanceModel):
+    """Represents a wikipedia article with its corresponding embeddings"""
+    doc_id: str 
+    filepath: str 
     filename: str = Field(description="stem of the file, without suffix")
     content: str = embedding_model.SourceField()
-    embedding: Vector(EMBEDDING_DIM) = embeddig_model.VectorField()
+    embedding: Vector(EMBEDDING_DIM) = embedding_model.VectorField()
